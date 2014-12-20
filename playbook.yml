@@ -1,0 +1,14 @@
+---
+- hosts: vagrant
+  user: vagrant
+  roles:
+    - none
+    - {role: none, myvar: "playbook_role"}
+    - use_default
+    - {role: use_default, myvar: "playbook_role"}
+    - use_var
+    - {role: use_var, myvar: "playbook_role"}
+    - use_both
+    - {role: use_both, myvar: "playbook_role"}
+  vars:
+    myvar: "playbook_local"
