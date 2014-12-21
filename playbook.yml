@@ -1,6 +1,6 @@
 ---
-- hosts: vagrant
-  user: vagrant
+- hosts: 127.0.0.1
+  connection: local
   roles:
     - none
     - {role: none, myvar: "playbook_role"}
