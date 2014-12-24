@@ -1,0 +1,14 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  vars: &vars
+    myvar: "playbook_local"
+  roles:
+    - none
+    - {role: none, <<: *vars }
+    - use_default
+    - {role: use_default, <<: *vars }
+    - use_var
+    - {role: use_var, <<: *vars }
+    - use_both
+    - {role: use_both, <<: *vars }
