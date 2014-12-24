@@ -4,11 +4,11 @@
   vars: &vars
     myvar: "playbook_local"
   roles:
-    - none
     - {role: none, <<: *vars }
-    - use_default
+    - {role: none, myvar: "playbook_role"}
     - {role: use_default, <<: *vars }
-    - use_var
+    - {role: use_default, myvar: "playbook_role"}
     - {role: use_var, <<: *vars }
-    - use_both
+    - {role: use_var, myvar: "playbook_role"}
     - {role: use_both, <<: *vars }
+    - {role: use_both, myvar: "playbook_role"}
